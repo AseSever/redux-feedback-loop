@@ -8,10 +8,17 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
 
-
+const feedbackReducer = (state = [], action) => {
+    if (action.type === 'SET_FEELING') {
+        return [...state, action.payload]
+    }
+    
+    return state
+}
 
 
 const reduxStore = createStore(
+  feedbackReducer,  
   applyMiddleware(logger)  
 );
 
