@@ -18,6 +18,9 @@ const feedbackReducer = (state = [], action) => {
     if (action.type === 'SET_SUPPORT') {
         return [...state, action.payload]
     }
+    if (action.type === 'SET_COMMENTS') {
+        return [...state, action.payload]
+    }
 
     return state
 }
