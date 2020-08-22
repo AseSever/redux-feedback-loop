@@ -14,17 +14,17 @@ class Feeling extends Component {
            feeling: event.target.value
        })
           
-    }
+    } // end handleChange
 
     handleSubmit = (event) => {
         event.preventDefault();
         if( this.state.feeling !== '' ){
-            this.props.dispatch({ type: 'SET_FEELING', payload: this.state})
-            this.props.history.push('/understanding')
+            this.props.dispatch({ type: 'SET_FEELING', payload: this.state});
+            this.props.history.push('/understanding');
         } else {
-            alert('Please pick a number between 1 and 5.')
-        }
-    }
+            alert('Please pick a number between 1 and 5.');
+        } 
+    } // end handleSubmit
 
 
 
@@ -46,10 +46,5 @@ class Feeling extends Component {
     }
 }
 
-const mapStateToProps = (reduxState) => {
-    return{
-        reduxState
-    }
-}
 
-export default connect(mapStateToProps)(Feeling);
+export default connect()(Feeling);

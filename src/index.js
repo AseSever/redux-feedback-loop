@@ -15,14 +15,19 @@ const feedbackReducer = (state = [], action) => {
     if (action.type === 'SET_UNDERSTANDING') {
         return [...state, action.payload]
     }
-    
+    if (action.type === 'SET_SUPPORT') {
+        return [...state, action.payload]
+    }
+
     return state
 }
 
 
 const reduxStore = createStore(
-  feedbackReducer,  
-  applyMiddleware(logger)  
+    combineReducers({
+        feedbackReducer
+    }),
+    applyMiddleware(logger)
 );
 
 
