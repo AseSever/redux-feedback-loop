@@ -6,6 +6,7 @@ import Feeling from '../Feeling/Feeling.jsx'
 import Comments from '../Comments/Comments';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path='/understanding' component={Understanding}/>
           <Route exact path='/support' component={Support}/>
           <Route exact path='/comments' component={Comments}/>
+          <Route exact path='/review' component={ReviewFeedback} />
         </Router>
         
         <br/>
