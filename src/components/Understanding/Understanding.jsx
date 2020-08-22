@@ -1,43 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-
-class Feeling extends Component {
+class Understanding extends Component {
 
     state = {
-        feeling: '',
+        understanding: '',
     }
 
     handleChange = (event) => {
        console.log('typing');
        this.setState({
-           feeling: event.target.value
+           understanding: event.target.value
        })
-          
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         if( this.state.feeling !== '' ){
-            this.props.dispatch({ type: 'SET_FEELING', payload: this.state})
-            this.props.history.push('/understanding')
+            this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state})
+            
         } else {
             alert('Please pick a number between 1 and 5.')
         }
     }
 
-
-
     render() {
-        console.log(this.state);
-        
         return (
             <>
-                <div>
-                    <h2>How are you feeling today?</h2>
+             <div>
+                    <h2>How well are you understanding the material?</h2>
 
                     <form onSubmit={this.handleSubmit}>
-                        <input type="number" min="1" max="5" placeholder="Feeling?" onChange={this.handleChange}/>
+                        <input type="number" min="1" max="5" placeholder="Understanding?" onChange={this.handleChange}/>
                         <input type="submit" value="Submit"/>
                     </form>
                 </div>
@@ -46,10 +40,6 @@ class Feeling extends Component {
     }
 }
 
-const mapStateToProps = (reduxState) => {
-    return{
-        reduxState
-    }
-}
 
-export default connect(mapStateToProps)(Feeling);
+
+export default connect()(Understanding);

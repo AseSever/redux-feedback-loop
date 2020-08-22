@@ -7,9 +7,12 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
-
+// reducer for taking in all feedback 
 const feedbackReducer = (state = [], action) => {
     if (action.type === 'SET_FEELING') {
+        return [...state, action.payload]
+    }
+    if (action.type === 'SET_UNDERSTANDING') {
         return [...state, action.payload]
     }
     
