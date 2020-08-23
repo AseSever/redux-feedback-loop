@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 class SubmitSuccess extends Component {
 
+    // sending home and clearing reducers
     handleReturn = () => {
+        this.props.dispatch({ type: 'CLEAR_FEEDBACK'})
         this.props.history.push('/')
     }
 
