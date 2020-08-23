@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 class ReviewItems extends Component {
 
     render() {
+        let key = Object.keys(this.props.item)[0]
         console.log(this.props.item);
         return(
             <>
-                    {this.props.item.feeling}
-                    {this.props.item.understanding}
-                    {this.props.item.support}
-                    {this.props.item.comments}
+                    <p>{key}: {this.props.item[key]}</p>
+                    
             </>
         )
     }

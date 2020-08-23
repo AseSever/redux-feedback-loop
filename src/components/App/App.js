@@ -7,6 +7,7 @@ import Comments from '../Comments/Comments';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import SubmitSuccess from '../SubmitSuccess/SubmitSuccess';
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path='/support' component={Support}/>
           <Route exact path='/comments' component={Comments}/>
           <Route exact path='/review' component={ReviewFeedback} />
+          <Route exact path='/submit' component={SubmitSuccess} />
         </Router>
         
         <br/>
