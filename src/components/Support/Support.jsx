@@ -43,10 +43,9 @@ class Support extends Component {
                                 <form onSubmit={this.handleSubmit}>
                                     <Grid item >
                                         <TextField id="standard-basic"
-                                            label="Standard"
+                                            label="Support?"
                                             type="number"
                                             inputProps={{ min: "1", max: "5" }}
-                                            placeholder="Support?"
                                             onChange={this.handleChange}
                                         />
                                     &nbsp;

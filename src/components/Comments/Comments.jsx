@@ -40,9 +40,8 @@ class Comments extends Component {
                                 <form onSubmit={this.handleSubmit}>
                                     <Grid item >
                                         <TextField id="standard-basic"
-                                            label="Standard"
+                                            label="Comments?"
                                             type="text"
-                                            placeholder="Comments?"
                                             onChange={this.handleChange}
                                         />
                                     &nbsp;
