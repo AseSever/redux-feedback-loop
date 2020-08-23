@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+// MATERIAL-UI
+import { Paper, Button, Grid, Card, TextField } from '@material-ui/core'
 
 class ReviewFeedback extends Component {
 
@@ -31,13 +33,22 @@ class ReviewFeedback extends Component {
         return (
             <>
 
-                <div>
-                    <h2>Review Your Feedback</h2>
-                    <p>Feeling: {this.props.reduxState.feelingFeedback.feeling}</p>
-                    <p>Understanding: {this.props.reduxState.understandingFeedback.understanding}</p>
-                    <p>Support: {this.props.reduxState.supportFeedback.support}</p>
-                    <p>Comments: {this.props.reduxState.commentsFeedback.comments}</p>
-                    <button onClick={this.postFeedback}>Submit</button>
+                <div className="reviewFeedback">
+                    <Paper elevation={3}>
+                        <h2>Review Your Feedback</h2>
+                        <p>Feeling: {this.props.reduxState.feelingFeedback.feeling}</p>
+                        <p>Understanding: {this.props.reduxState.understandingFeedback.understanding}</p>
+                        <p>Support: {this.props.reduxState.supportFeedback.support}</p>
+                        <p>Comments: {this.props.reduxState.commentsFeedback.comments}</p>
+                        
+                        <Button variant="contained"
+                                color="primary"
+                                onClick={this.postFeedback}
+                        >
+                            Submit
+                        </Button>
+                        {/* <button onClick={this.postFeedback}>Submit</button> */}
+                    </Paper>
                 </div>
             </>
         )
