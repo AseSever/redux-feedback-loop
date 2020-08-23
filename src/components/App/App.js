@@ -28,7 +28,7 @@ class App extends Component {
           <Route exact path='/submit' component={SubmitSuccess} />
         </Router>
         
-        <br/>
+        
       </div>
     );
   }

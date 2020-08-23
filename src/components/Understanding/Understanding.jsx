@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// MATERIAL-UI
+import { Paper, Button, Grid, Card, TextField } from '@material-ui/core';
+
 class Understanding extends Component {
 
     state = {
@@ -8,37 +11,65 @@ class Understanding extends Component {
     }
 
     handleChange = (event) => {
-       console.log('typing');
-       this.setState({
-           understanding: event.target.value
-       })
-    }
+        console.log('typing');
+        this.setState({
+            understanding: event.target.value
+        })
+    } // end handleChange
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if( this.state.understanding !== '' ){
-            this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state});
+        if (this.state.understanding !== '') {
+            this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state });
             this.props.history.push('/support');
         } else {
             alert('Please pick a number between 1 and 5.')
         }
-    }
+    } // end handleSubmit
+
     handleBackBtn = () => {
-        this.props.dispatch({ type: 'CLEAR_FEELING'});
+        this.props.dispatch({ type: 'CLEAR_FEELING' });
         this.props.history.push('/')
-    }
+    } // end handleBackBtn
 
     render() {
         return (
             <>
-             <div>
-                    <h2>How well are you understanding the material?</h2>
-                    
-                    <form onSubmit={this.handleSubmit}>
-                        <input type="number" min="1" max="5" placeholder="Understanding?" onChange={this.handleChange}/>
-                        <input type="submit" value="Submit"/>
-                    </form>
-                    <button onClick={this.handleBackBtn}>Back</button>
+                <div className="form">
+                    <Paper elevation={3}>
+                        <Grid container justify="space-around" alignItems="center">
+                            <Grid item >
+                                <h2>How well are you understanding the material?</h2>
+                                <form onSubmit={this.handleSubmit}>
+                                    <Grid item >
+                                        <TextField id="standard-basic"
+                                            label="Standard"
+                                            type="number"
+                                            inputProps={{ min: "1", max: "5" }}
+                                            placeholder="Understanding?"
+                                            onChange={this.handleChange}
+                                        />
+                                    &nbsp;
+                                    <Button variant="contained"
+                                            color="primary"
+                                            type="submit">
+                                            Submit
+                                    </Button>
+                                    </Grid>
+                                </form>
+                                &nbsp;
+                                <Grid item >
+                                    <Button variant="contained"
+                                        color="secondary"
+                                        onClick={this.handleBackBtn}
+                                    >
+                                        Back
+                                    </Button>
+                                </Grid>
+
+                            </Grid>
+                        </Grid>
+                    </Paper>
                 </div>
             </>
         )

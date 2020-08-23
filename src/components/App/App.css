@@ -25,3 +25,12 @@ input[type=text] {
   width: 300px;
 }
 
+.form{
+  margin: 30px;
+  padding: 20px;
+}
+
+.reviewFeedback {
+  margin: 75px;
+  padding: 20px;
+}
