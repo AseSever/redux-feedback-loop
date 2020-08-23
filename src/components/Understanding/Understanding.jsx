@@ -23,17 +23,22 @@ class Understanding extends Component {
             alert('Please pick a number between 1 and 5.')
         }
     }
+    handleBackBtn = () => {
+        this.props.dispatch({ type: 'CLEAR_FEELING'});
+        this.props.history.push('/')
+    }
 
     render() {
         return (
             <>
              <div>
                     <h2>How well are you understanding the material?</h2>
-
+                    
                     <form onSubmit={this.handleSubmit}>
                         <input type="number" min="1" max="5" placeholder="Understanding?" onChange={this.handleChange}/>
                         <input type="submit" value="Submit"/>
                     </form>
+                    <button onClick={this.handleBackBtn}>Back</button>
                 </div>
             </>
         )

@@ -40,6 +40,9 @@ class Feeling extends Component {
                         <input type="number" min="1" max="5" placeholder="Feeling?" onChange={this.handleChange}/>
                         <input type="submit" value="Submit"/>
                     </form>
+                    <div>
+                        
+                    </div>
                 </div>
             </>
         )

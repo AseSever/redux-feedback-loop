@@ -21,6 +21,11 @@ class Comments extends Component {
       
     }
 
+    handleBackBtn = () => {
+        this.props.dispatch({ type: 'CLEAR_SUPPORT'});
+        this.props.history.push('/support')
+    }
+
     render() {
         return (
             <>
@@ -31,6 +36,7 @@ class Comments extends Component {
                         <input type="text" placeholder="Comments?" onChange={this.handleChange} />
                         <input type="submit" value="Submit" />
                     </form>
+                    <button onClick={this.handleBackBtn}>Back</button>
                 </div>
             </>
         )

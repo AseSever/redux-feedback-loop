@@ -24,6 +24,11 @@ class Support extends Component {
         }
     }
 
+    handleBackBtn = () => {
+        this.props.dispatch({ type: 'CLEAR_UNDERSTANDING'});
+        this.props.history.push('/understanding')
+    }
+
     render() {
         return (
             <>
@@ -34,6 +39,7 @@ class Support extends Component {
                         <input type="number" min="1" max="5" placeholder="Support?" onChange={this.handleChange} />
                         <input type="submit" value="Submit" />
                     </form>
+                    <button onClick={this.handleBackBtn}>Back</button>
                 </div>
             </>
         )

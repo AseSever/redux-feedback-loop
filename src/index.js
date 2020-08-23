@@ -16,6 +16,9 @@ const feelingFeedback = (state = {}, action) => {
     if (action.type === 'CLEAR_FEEDBACK') {
         return {}
     }
+    if (action.type === 'CLEAR_FEELING') {
+        return {}
+    }
     return state
 } // end feeling reducer
 
@@ -28,6 +31,9 @@ const understandingFeedback = (state = {}, action) => {
     if (action.type === 'CLEAR_FEEDBACK') {
         return {}
     }
+    if (action.type === 'CLEAR_UNDERSTANDING') {
+        return {}
+    }
     return state
 } // end understanding reducer
 
@@ -38,6 +44,9 @@ const supportFeedback = (state = {}, action) => {
     }
     // clearing reducer
     if (action.type === 'CLEAR_FEEDBACK') {
+        return {}
+    }
+    if (action.type === 'CLEAR_SUPPORT') {
         return {}
     }
     return state
